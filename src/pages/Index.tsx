@@ -8,7 +8,17 @@ const NAV = [
   { id: 'about', label: 'О салоне' },
   { id: 'services', label: 'Услуги' },
   { id: 'price', label: 'Прайс' },
+  { id: 'reviews', label: 'Отзывы' },
   { id: 'contacts', label: 'Контакты' },
+];
+
+const REVIEWS = [
+  { name: 'Анастасия К.', service: 'Окрашивание', text: 'Наконец-то нашла своего колориста! Результат превзошёл ожидания — цвет получился именно таким, как я хотела. Буду возвращаться снова.', stars: 5 },
+  { name: 'Марина Л.', service: 'Маникюр и педикюр', text: 'Очень аккуратный мастер, покрытие держится уже третью неделю. Приятная атмосфера в салоне, всё чисто и стильно.', stars: 5 },
+  { name: 'Екатерина В.', service: 'Наращивание ресниц', text: 'Делала наращивание 2D — выгляжу шикарно! Мастер всё объяснила, подобрала длину и изгиб под форму глаз. Рекомендую!', stars: 5 },
+  { name: 'Ольга Д.', service: 'Кератиновое выпрямление', text: 'Сделала кератин впервые — это чудо! Волосы гладкие, блестящие, укладка занимает 5 минут. Спасибо мастерам «Малины».', stars: 5 },
+  { name: 'Юлия Т.', service: 'Перманентный макияж бровей', text: 'Боялась перманента, но мастер развеяла все страхи. Брови получились натуральные и красивые. Очень довольна результатом!', stars: 5 },
+  { name: 'Светлана М.', service: 'Лазерная эпиляция', text: 'Хожу на лазер уже 4 сеанса — результат заметен после второго. Процедура почти безболезненная, мастер внимательная.', stars: 5 },
 ];
 
 const SERVICES = [
@@ -226,6 +236,32 @@ const Index = () => {
           <Button size="lg" className="rounded-full px-8 h-12" onClick={() => scrollTo('booking')}>
             Узнать точную стоимость
           </Button>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section id="reviews" className="py-24 bg-secondary/50 border-y border-border">
+        <div className="container">
+          <div className="text-center max-w-xl mx-auto mb-14">
+            <p className="text-primary uppercase tracking-[0.3em] text-xs mb-4">Мнения клиентов</p>
+            <h2 className="font-display text-4xl sm:text-5xl font-semibold">Отзывы посетителей</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {REVIEWS.map((r) => (
+              <div key={r.name} className="bg-card rounded-lg p-7 border border-border flex flex-col gap-4">
+                <div className="flex gap-0.5">
+                  {Array.from({ length: r.stars }).map((_, i) => (
+                    <Icon key={i} name="Star" size={16} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <p className="text-foreground/80 text-sm leading-relaxed flex-1">«{r.text}»</p>
+                <div>
+                  <p className="font-medium text-sm">{r.name}</p>
+                  <p className="text-muted-foreground text-xs">{r.service}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
