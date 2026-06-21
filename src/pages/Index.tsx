@@ -27,7 +27,7 @@ const PRICE: { group: string; items: { name: string; price: string }[] }[] = [
     items: [
       { name: 'Ботокс для волос', price: 'от 3 500 ₽' },
       { name: 'Кератиновое выпрямление', price: 'от 4 000 ₽' },
-      { name: 'Биксипластия', price: 'от 4 500 ₽' },
+      { name: 'Биксипластия', price: 'от 6 500 ₽' },
     ],
   },
   {
@@ -41,9 +41,14 @@ const PRICE: { group: string; items: { name: string; price: string }[] }[] = [
   {
     group: 'Ногтевой сервис',
     items: [
+      { name: 'Ремонт ногтя', price: '100 ₽' },
+      { name: 'Дизайн (за ноготь)', price: 'от 100 ₽' },
+      { name: 'Маникюр без покрытия', price: '1 400 ₽' },
       { name: 'Маникюр с покрытием', price: 'от 1 800 ₽' },
       { name: 'Педикюр с покрытием', price: 'от 2 500 ₽' },
-      { name: 'Дизайн (за ноготь)', price: 'от 100 ₽' },
+      { name: 'Коррекция наращенных ногтей', price: '3 000 ₽' },
+      { name: 'Наращивание ногтей', price: '3 600 ₽' },
+      { name: 'Френч', price: '+500 ₽' },
     ],
   },
   {
