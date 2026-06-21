@@ -258,7 +258,7 @@ const Index = () => {
               </li>
               <li className="flex gap-4">
                 <Icon name="Clock" className="text-primary shrink-0 mt-1" size={20} />
-                <div><p className="font-medium">Режим работы</p><p className="text-muted-foreground">Ежедневно с 9:00 до 21:00</p></div>
+                <div><p className="font-medium">Режим работы</p><p className="text-muted-foreground">Ежедневно с 10:00 до 21:00</p></div>
               </li>
               <li className="flex gap-4">
                 <Icon name="Phone" className="text-primary shrink-0 mt-1" size={20} />
@@ -278,7 +278,7 @@ const Index = () => {
           </div>
           <div className="text-sm text-background/60">
             <p>Москва, ул. Уточкина, 8к2</p>
-            <p>Ежедневно 9:00–21:00</p>
+            <p>Ежедневно 10:00–21:00</p>
             <a href="tel:+79895958645" className="hover:text-background transition-colors">+7 (989) 595-86-45</a>
             <p className="mt-4">© {new Date().getFullYear()} Салон красоты «Малина»</p>
           </div>
