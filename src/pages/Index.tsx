@@ -122,8 +122,8 @@ const Index = () => {
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <Button size="sm" className="hidden sm:inline-flex rounded-full px-5" onClick={() => scrollTo('booking')}>
-              Записаться
+            <Button size="sm" className="hidden sm:inline-flex rounded-full px-5" asChild>
+              <a href="https://n1300562.yclients.com/company/1185807/personal/select-services?o=" target="_blank" rel="noopener noreferrer">Записаться</a>
             </Button>
             <button className="md:hidden p-2" onClick={() => setMenuOpen((v) => !v)}>
               <Icon name={menuOpen ? 'X' : 'Menu'} size={24} />
@@ -137,7 +137,9 @@ const Index = () => {
                 {n.label}
               </button>
             ))}
-            <Button className="rounded-full" onClick={() => scrollTo('booking')}>Записаться онлайн</Button>
+            <Button className="rounded-full" asChild>
+              <a href="https://n1300562.yclients.com/company/1185807/personal/select-services?o=" target="_blank" rel="noopener noreferrer">Записаться онлайн</a>
+            </Button>
           </nav>
         )}
       </header>
@@ -158,8 +160,8 @@ const Index = () => {
               Современное бьюти-пространство в шаговой доступности. Волосы, ногти, взгляд, тело — доверьте красоту мастерам «Малины».
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button size="lg" className="rounded-full px-8 h-12 text-base" onClick={() => scrollTo('booking')}>
-                Записаться онлайн
+              <Button size="lg" className="rounded-full px-8 h-12 text-base" asChild>
+                <a href="https://n1300562.yclients.com/company/1185807/personal/select-services?o=" target="_blank" rel="noopener noreferrer">Записаться онлайн</a>
               </Button>
               <Button size="lg" variant="outline" className="rounded-full px-8 h-12 text-base border-primary/40 text-primary hover:bg-accent" onClick={() => scrollTo('price')}>
                 Смотреть прайс
@@ -233,8 +235,8 @@ const Index = () => {
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button size="lg" className="rounded-full px-8 h-12" onClick={() => scrollTo('booking')}>
-            Узнать точную стоимость
+          <Button size="lg" className="rounded-full px-8 h-12" asChild>
+            <a href="https://n1300562.yclients.com/company/1185807/personal/select-services?o=" target="_blank" rel="noopener noreferrer">Узнать точную стоимость</a>
           </Button>
         </div>
       </section>
@@ -274,8 +276,10 @@ const Index = () => {
               Выберите удобное время онлайн или напишите нам в мессенджер — подберём мастера и ответим на вопросы.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button size="lg" variant="secondary" className="rounded-full px-7 h-12">
-                <Icon name="CalendarCheck" size={18} className="mr-2" /> Онлайн-запись
+              <Button size="lg" variant="secondary" className="rounded-full px-7 h-12" asChild>
+                <a href="https://n1300562.yclients.com/company/1185807/personal/select-services?o=" target="_blank" rel="noopener noreferrer">
+                  <Icon name="CalendarCheck" size={18} className="mr-2" /> Онлайн-запись
+                </a>
               </Button>
               <Button size="lg" variant="secondary" className="rounded-full px-7 h-12 bg-[#25D366] hover:bg-[#1ebe5d] text-white">
                 <Icon name="MessageCircle" size={18} className="mr-2" /> WhatsApp
