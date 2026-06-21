@@ -281,11 +281,15 @@ const Index = () => {
                   <Icon name="CalendarCheck" size={18} className="mr-2" /> Онлайн-запись
                 </a>
               </Button>
-              <Button size="lg" variant="secondary" className="rounded-full px-7 h-12 bg-[#25D366] hover:bg-[#1ebe5d] text-white">
-                <Icon name="MessageCircle" size={18} className="mr-2" /> WhatsApp
+              <Button size="lg" variant="secondary" className="rounded-full px-7 h-12 bg-[#25D366] hover:bg-[#1ebe5d] text-white" asChild>
+                <a href="https://max.ru/u/f9LHodD0cOLD2C_9hVQ2DrmFFL0U7dlmy2BNNFQb8eBlFrcfnmf2Le5Mrqk" target="_blank" rel="noopener noreferrer">
+                  <Icon name="MessageCircle" size={18} className="mr-2" /> Макс / ВКонтакте
+                </a>
               </Button>
-              <Button size="lg" variant="secondary" className="rounded-full px-7 h-12 bg-[#229ED9] hover:bg-[#1d8cc2] text-white">
-                <Icon name="Send" size={18} className="mr-2" /> Telegram
+              <Button size="lg" variant="secondary" className="rounded-full px-7 h-12 bg-[#229ED9] hover:bg-[#1d8cc2] text-white" asChild>
+                <a href="https://t.me/malinaTerritoryOfBeautyy" target="_blank" rel="noopener noreferrer">
+                  <Icon name="Send" size={18} className="mr-2" /> Telegram
+                </a>
               </Button>
             </div>
           </div>
@@ -303,6 +307,14 @@ const Index = () => {
               <li className="flex gap-4">
                 <Icon name="Phone" className="text-primary shrink-0 mt-1" size={20} />
                 <div><p className="font-medium">Телефон</p><a href="tel:+79895958645" className="text-muted-foreground hover:text-primary transition-colors">+7 (989) 595-86-45</a></div>
+              </li>
+              <li className="flex gap-4">
+                <Icon name="Send" className="text-primary shrink-0 mt-1" size={20} />
+                <div><p className="font-medium">Telegram</p><a href="https://t.me/malinaTerritoryOfBeautyy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">@malinaTerritoryOfBeautyy</a></div>
+              </li>
+              <li className="flex gap-4">
+                <Icon name="MessageSquare" className="text-primary shrink-0 mt-1" size={20} />
+                <div><p className="font-medium">ВКонтакте / Макс</p><a href="https://max.ru/u/f9LHodD0cOLD2C_9hVQ2DrmFFL0U7dlmy2BNNFQb8eBlFrcfnmf2Le5Mrqk" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">Написать нам</a></div>
               </li>
             </ul>
           </div>
