@@ -110,13 +110,13 @@ const Index = () => {
       {/* Header */}
       <header className="fixed top-0 inset-x-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container flex items-center justify-between h-16">
-          <button onClick={() => scrollTo('hero')} className="flex items-baseline gap-1.5">
-            <span className="font-display text-3xl font-semibold text-primary leading-none">Малина</span>
+          <button onClick={() => scrollTo('hero')} className="flex items-baseline gap-1.5 min-h-[44px] min-w-[44px]">
+            <span className="font-display text-2xl sm:text-3xl font-semibold text-primary leading-none">Малина</span>
             <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground hidden sm:inline">территория красоты</span>
           </button>
           <nav className="hidden md:flex items-center gap-8">
             {NAV.map((n) => (
-              <button key={n.id} onClick={() => scrollTo(n.id)} className="text-sm text-foreground/70 hover:text-primary transition-colors">
+              <button key={n.id} onClick={() => scrollTo(n.id)} className="text-sm text-foreground/70 hover:text-primary transition-colors py-2">
                 {n.label}
               </button>
             ))}
@@ -125,45 +125,47 @@ const Index = () => {
             <Button size="sm" className="hidden sm:inline-flex rounded-full px-5" asChild>
               <a href="https://n1300562.yclients.com/company/1185807/personal/select-services?o=" target="_blank" rel="noopener noreferrer">Записаться</a>
             </Button>
-            <button className="md:hidden p-2" onClick={() => setMenuOpen((v) => !v)}>
+            <button className="md:hidden p-3 min-h-[44px] min-w-[44px] flex items-center justify-center" onClick={() => setMenuOpen((v) => !v)}>
               <Icon name={menuOpen ? 'X' : 'Menu'} size={24} />
             </button>
           </div>
         </div>
         {menuOpen && (
-          <nav className="md:hidden border-t border-border bg-background px-6 py-4 flex flex-col gap-4 animate-fade-in">
+          <nav className="md:hidden border-t border-border bg-background px-6 py-5 flex flex-col gap-1 animate-fade-in safe-bottom">
             {NAV.map((n) => (
-              <button key={n.id} onClick={() => scrollTo(n.id)} className="text-left text-foreground/80">
+              <button key={n.id} onClick={() => scrollTo(n.id)} className="text-left text-foreground/80 py-3 text-base min-h-[44px] border-b border-border/40 last:border-0">
                 {n.label}
               </button>
             ))}
-            <Button className="rounded-full" asChild>
-              <a href="https://n1300562.yclients.com/company/1185807/personal/select-services?o=" target="_blank" rel="noopener noreferrer">Записаться онлайн</a>
-            </Button>
+            <div className="pt-3">
+              <Button className="rounded-full w-full" asChild>
+                <a href="https://n1300562.yclients.com/company/1185807/personal/select-services?o=" target="_blank" rel="noopener noreferrer">Записаться онлайн</a>
+              </Button>
+            </div>
           </nav>
         )}
       </header>
 
       {/* Hero */}
-      <section id="hero" className="relative pt-16 min-h-[92vh] flex items-center overflow-hidden">
+      <section id="hero" className="relative pt-16 min-h-[100svh] sm:min-h-[92vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="Интерьер салона Малина" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/20" />
+          <img src={HERO_IMG} alt="Интерьер салона Малина" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-r from-background via-background/90 sm:via-background/85 to-background/60 sm:to-background/20" />
         </div>
-        <div className="container relative z-10 py-20">
+        <div className="container relative z-10 py-16 sm:py-20">
           <div className="max-w-2xl fade-up">
-            <p className="text-primary uppercase tracking-[0.3em] text-xs mb-6">ЖК «Алхимово» · ул. Уточкина 8к2</p>
-            <h1 className="font-display text-5xl sm:text-7xl font-semibold leading-[1.05] text-balance mb-6">
+            <p className="text-primary uppercase tracking-[0.2em] sm:tracking-[0.3em] text-xs mb-5 sm:mb-6">ЖК «Алхимово» · ул. Уточкина 8к2</p>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-semibold leading-[1.05] text-balance mb-5 sm:mb-6">
               Эстетика, уход и&nbsp;настоящий профессионализм
             </h1>
-            <p className="text-lg text-muted-foreground max-w-lg mb-9">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-lg mb-8 sm:mb-9">
               Современное бьюти-пространство в шаговой доступности. Волосы, ногти, взгляд, тело — доверьте красоту мастерам «Малины».
             </p>
-            <div className="flex flex-wrap gap-3">
-              <Button size="lg" className="rounded-full px-8 h-12 text-base" asChild>
+            <div className="flex flex-col xs:flex-row flex-wrap gap-3">
+              <Button size="lg" className="rounded-full px-8 h-12 text-base w-full xs:w-auto" asChild>
                 <a href="https://n1300562.yclients.com/company/1185807/personal/select-services?o=" target="_blank" rel="noopener noreferrer">Записаться онлайн</a>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-8 h-12 text-base border-primary/40 text-primary hover:bg-accent" onClick={() => scrollTo('price')}>
+              <Button size="lg" variant="outline" className="rounded-full px-8 h-12 text-base border-primary/40 text-primary hover:bg-accent w-full xs:w-auto" onClick={() => scrollTo('price')}>
                 Смотреть прайс
               </Button>
             </div>
@@ -172,8 +174,8 @@ const Index = () => {
       </section>
 
       {/* About / UTP */}
-      <section id="about" className="py-24 container">
-        <div className="grid sm:grid-cols-3 gap-10">
+      <section id="about" className="py-16 sm:py-24 container">
+        <div className="grid sm:grid-cols-3 gap-8 sm:gap-10">
           {[
             { icon: 'Gem', title: 'Премиум-материалы', desc: 'Работаем только на профессиональной косметике проверенных брендов.' },
             { icon: 'HeartHandshake', title: 'Индивидуальный подход', desc: 'Подбираем уход под ваш тип кожи, волос и образ жизни.' },
@@ -191,13 +193,13 @@ const Index = () => {
       </section>
 
       {/* Services */}
-      <section id="services" className="py-24 bg-secondary/50 border-y border-border">
+      <section id="services" className="py-16 sm:py-24 bg-secondary/50 border-y border-border">
         <div className="container">
-          <div className="text-center max-w-xl mx-auto mb-14">
+          <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
             <p className="text-primary uppercase tracking-[0.3em] text-xs mb-4">Что мы делаем</p>
             <h2 className="font-display text-4xl sm:text-5xl font-semibold">Наши услуги</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {SERVICES.map((s) => (
               <div key={s.title} className="group bg-card rounded-lg p-7 border border-border hover:border-primary/40 hover:shadow-lg transition-all">
                 <div className="w-11 h-11 rounded-full bg-accent flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -212,22 +214,22 @@ const Index = () => {
       </section>
 
       {/* Price */}
-      <section id="price" className="py-24 container">
-        <div className="text-center max-w-xl mx-auto mb-14">
+      <section id="price" className="py-16 sm:py-24 container">
+        <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
           <p className="text-primary uppercase tracking-[0.3em] text-xs mb-4">Стоимость</p>
           <h2 className="font-display text-4xl sm:text-5xl font-semibold mb-3">Полный прайс-лист</h2>
-          <p className="text-muted-foreground">Финальная стоимость зависит от длины волос и сложности. Уточните цену под вашу задачу.</p>
+          <p className="text-muted-foreground text-sm sm:text-base">Финальная стоимость зависит от длины волос и сложности. Уточните цену под вашу задачу.</p>
         </div>
-        <div className="max-w-3xl mx-auto grid gap-10">
+        <div className="max-w-3xl mx-auto grid gap-8 sm:gap-10">
           {PRICE.map((block) => (
             <div key={block.group}>
-              <h3 className="font-display text-2xl text-primary mb-4 pb-2 border-b border-border">{block.group}</h3>
+              <h3 className="font-display text-xl sm:text-2xl text-primary mb-3 sm:mb-4 pb-2 border-b border-border">{block.group}</h3>
               <ul className="divide-y divide-border">
                 {block.items.map((it) => (
-                  <li key={it.name} className="flex items-baseline justify-between gap-4 py-3">
-                    <span>{it.name}</span>
-                    <span className="flex-1 border-b border-dotted border-border/70 translate-y-[-3px]" />
-                    <span className="font-medium whitespace-nowrap">{it.price}</span>
+                  <li key={it.name} className="flex items-baseline justify-between gap-2 py-3">
+                    <span className="text-sm sm:text-base">{it.name}</span>
+                    <span className="flex-1 border-b border-dotted border-border/70 translate-y-[-3px] min-w-[16px]" />
+                    <span className="font-medium whitespace-nowrap text-sm sm:text-base">{it.price}</span>
                   </li>
                 ))}
               </ul>
@@ -242,13 +244,13 @@ const Index = () => {
       </section>
 
       {/* Reviews */}
-      <section id="reviews" className="py-24 bg-secondary/50 border-y border-border">
+      <section id="reviews" className="py-16 sm:py-24 bg-secondary/50 border-y border-border">
         <div className="container">
-          <div className="text-center max-w-xl mx-auto mb-14">
+          <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
             <p className="text-primary uppercase tracking-[0.3em] text-xs mb-4">Мнения клиентов</p>
             <h2 className="font-display text-4xl sm:text-5xl font-semibold">Отзывы посетителей</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {REVIEWS.map((r) => (
               <div key={r.name} className="bg-card rounded-lg p-7 border border-border flex flex-col gap-4">
                 <div className="flex gap-0.5">
@@ -268,32 +270,32 @@ const Index = () => {
       </section>
 
       {/* Booking + Contacts */}
-      <section id="booking" className="py-24 bg-primary text-primary-foreground">
-        <div className="container grid lg:grid-cols-2 gap-14 items-center">
+      <section id="booking" className="py-16 sm:py-24 bg-primary text-primary-foreground">
+        <div className="container grid lg:grid-cols-2 gap-10 sm:gap-14 items-center">
           <div>
-            <h2 className="font-display text-4xl sm:text-5xl font-semibold mb-5">Записаться в «Малину»</h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-md">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-5">Записаться в «Малину»</h2>
+            <p className="text-primary-foreground/80 mb-6 sm:mb-8 max-w-md text-sm sm:text-base">
               Выберите удобное время онлайн или напишите нам в мессенджер — подберём мастера и ответим на вопросы.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <Button size="lg" variant="secondary" className="rounded-full px-7 h-12" asChild>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+              <Button size="lg" variant="secondary" className="rounded-full px-7 h-12 w-full sm:w-auto" asChild>
                 <a href="https://n1300562.yclients.com/company/1185807/personal/select-services?o=" target="_blank" rel="noopener noreferrer">
                   <Icon name="CalendarCheck" size={18} className="mr-2" /> Онлайн-запись
                 </a>
               </Button>
-              <Button size="lg" variant="secondary" className="rounded-full px-7 h-12 bg-[#25D366] hover:bg-[#1ebe5d] text-white" asChild>
+              <Button size="lg" variant="secondary" className="rounded-full px-7 h-12 bg-[#25D366] hover:bg-[#1ebe5d] text-white w-full sm:w-auto" asChild>
                 <a href="https://max.ru/u/f9LHodD0cOLD2C_9hVQ2DrmFFL0U7dlmy2BNNFQb8eBlFrcfnmf2Le5Mrqk" target="_blank" rel="noopener noreferrer">
                   <Icon name="MessageCircle" size={18} className="mr-2" /> Макс / ВКонтакте
                 </a>
               </Button>
-              <Button size="lg" variant="secondary" className="rounded-full px-7 h-12 bg-[#229ED9] hover:bg-[#1d8cc2] text-white" asChild>
+              <Button size="lg" variant="secondary" className="rounded-full px-7 h-12 bg-[#229ED9] hover:bg-[#1d8cc2] text-white w-full sm:w-auto" asChild>
                 <a href="https://t.me/malinaTerritoryOfBeautyy" target="_blank" rel="noopener noreferrer">
                   <Icon name="Send" size={18} className="mr-2" /> Telegram
                 </a>
               </Button>
             </div>
           </div>
-          <div id="contacts" className="bg-background text-foreground rounded-lg p-8">
+          <div id="contacts" className="bg-background text-foreground rounded-lg p-6 sm:p-8">
             <h3 className="font-display text-3xl mb-6">Контакты</h3>
             <ul className="space-y-5">
               <li className="flex gap-4">
