@@ -313,51 +313,38 @@ const Index = () => {
               </Button>
             </div>
           </div>
-          <div id="contacts" className="bg-background text-foreground rounded-lg overflow-hidden">
-            <div className="p-6 sm:p-8">
-              <h3 className="font-display text-3xl mb-6">Контакты</h3>
-              <ul className="space-y-5">
-                <li className="flex gap-4">
-                  <Icon name="MapPin" className="text-primary shrink-0 mt-1" size={20} />
-                  <div><p className="font-medium">Адрес</p><p className="text-muted-foreground">Москва, ЖК «Алхимово», ул. Уточкина, д. 8, к. 2</p></div>
-                </li>
-                <li className="flex gap-4">
-                  <Icon name="Clock" className="text-primary shrink-0 mt-1" size={20} />
-                  <div><p className="font-medium">Режим работы</p><p className="text-muted-foreground">Ежедневно с 10:00 до 21:00</p></div>
-                </li>
-                <li className="flex gap-4">
-                  <Icon name="Phone" className="text-primary shrink-0 mt-1" size={20} />
-                  <div><p className="font-medium">Телефон</p><a href="tel:+79895958645" className="text-muted-foreground hover:text-primary transition-colors">+7 (989) 595-86-45</a></div>
-                </li>
-                <li className="flex gap-4">
-                  <Icon name="Send" className="text-primary shrink-0 mt-1" size={20} />
-                  <div><p className="font-medium">Telegram</p><a href="https://t.me/malinaTerritoryOfBeautyy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">@malinaTerritoryOfBeautyy</a></div>
-                </li>
-                <li className="flex gap-4">
-                  <Icon name="MessageSquare" className="text-primary shrink-0 mt-1" size={20} />
-                  <div><p className="font-medium">ВКонтакте / Макс</p><a href="https://max.ru/u/f9LHodD0cOLD2C_9hVQ2DrmFFL0U7dlmy2BNNFQb8eBlFrcfnmf2Le5Mrqk" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">Написать нам</a></div>
-                </li>
-              </ul>
-              <a
-                href="https://yandex.ru/maps/?rtext=~55.572422,37.363076&rtt=auto"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 bg-primary text-primary-foreground rounded-full px-6 h-11 text-sm font-medium hover:opacity-90 transition-opacity"
-              >
-                <Icon name="Navigation" size={16} /> Как добраться
-              </a>
-            </div>
-            <div className="w-full h-52 sm:h-64">
-              <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=37.363076%2C55.572422&z=16&pt=37.363076%2C55.572422%2Cpm2rdm~37.363076%2C55.572422%2Cpm2rdl&text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D1%83%D0%BB.%20%D0%A3%D1%82%D0%BE%D1%87%D0%BA%D0%B8%D0%BD%D0%B0%2C%208%D0%BA2%20%D0%A1%D0%B0%D0%BB%D0%BE%D0%BD%20%D0%9C%D0%90%D0%9B%D0%98%D0%9D%D0%90"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                title="Карта — Салон красоты Малина"
-                style={{ border: 0 }}
-                allowFullScreen
-              />
-            </div>
+          <div id="contacts" className="bg-background text-foreground rounded-lg p-6 sm:p-8">
+            <h3 className="font-display text-3xl mb-6">Контакты</h3>
+            <ul className="space-y-5">
+              <li className="flex gap-4">
+                <Icon name="MapPin" className="text-primary shrink-0 mt-1" size={20} />
+                <div><p className="font-medium">Адрес</p><p className="text-muted-foreground">Москва, ЖК «Алхимово», ул. Уточкина, д. 8, к. 2</p></div>
+              </li>
+              <li className="flex gap-4">
+                <Icon name="Clock" className="text-primary shrink-0 mt-1" size={20} />
+                <div><p className="font-medium">Режим работы</p><p className="text-muted-foreground">Ежедневно с 10:00 до 21:00</p></div>
+              </li>
+              <li className="flex gap-4">
+                <Icon name="Phone" className="text-primary shrink-0 mt-1" size={20} />
+                <div><p className="font-medium">Телефон</p><a href="tel:+79895958645" className="text-muted-foreground hover:text-primary transition-colors">+7 (989) 595-86-45</a></div>
+              </li>
+              <li className="flex gap-4">
+                <Icon name="Send" className="text-primary shrink-0 mt-1" size={20} />
+                <div><p className="font-medium">Telegram</p><a href="https://t.me/malinaTerritoryOfBeautyy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">@malinaTerritoryOfBeautyy</a></div>
+              </li>
+              <li className="flex gap-4">
+                <Icon name="MessageSquare" className="text-primary shrink-0 mt-1" size={20} />
+                <div><p className="font-medium">ВКонтакте / Макс</p><a href="https://max.ru/u/f9LHodD0cOLD2C_9hVQ2DrmFFL0U7dlmy2BNNFQb8eBlFrcfnmf2Le5Mrqk" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">Написать нам</a></div>
+              </li>
+            </ul>
+            <a
+              href="https://yandex.ru/maps/?rtext=~55.572422,37.363076&rtt=auto"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 bg-primary text-primary-foreground rounded-full px-6 h-11 text-sm font-medium hover:opacity-90 transition-opacity"
+            >
+              <Icon name="Navigation" size={16} /> Как добраться
+            </a>
           </div>
         </div>
       </section>
