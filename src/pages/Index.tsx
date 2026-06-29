@@ -31,7 +31,7 @@ const SERVICES = [
   { icon: 'Hand', title: 'Массаж тела', desc: 'Расслабляющий и моделирующий уход для тела.' },
 ];
 
-const PRICE: { group: string; items: { name: string; price: string }[] }[] = [
+const PRICE: { group: string; items: { name: string; price: string; promo?: boolean }[] }[] = [
   {
     group: 'Уход за волосами',
     items: [
@@ -78,7 +78,7 @@ const PRICE: { group: string; items: { name: string; price: string }[] }[] = [
       { name: 'Лазерная эпиляция · подмышечные впадины', price: 'от 900 ₽' },
       { name: 'Лазерная эпиляция · голени', price: '1 500 ₽' },
       { name: 'Лазерная эпиляция · всё тело', price: '7 000 ₽' },
-      { name: 'Лазерная эпиляция · всё тело (первое посещение)', price: '3 900 ₽' },
+      { name: 'Лазерная эпиляция · всё тело (первое посещение)', price: '3 900 ₽', promo: true },
     ],
   },
   {
@@ -241,10 +241,13 @@ const Index = () => {
               <h3 className="font-display text-xl sm:text-2xl text-primary mb-3 sm:mb-4 pb-2 border-b border-border">{block.group}</h3>
               <ul className="divide-y divide-border">
                 {block.items.map((it) => (
-                  <li key={it.name} className="flex items-baseline justify-between gap-2 py-3">
-                    <span className="text-sm sm:text-base">{it.name}</span>
-                    <span className="flex-1 border-b border-dotted border-border/70 translate-y-[-3px] min-w-[16px]" />
-                    <span className="font-medium whitespace-nowrap text-sm sm:text-base">{it.price}</span>
+                  <li key={it.name} className={`flex items-center justify-between gap-2 py-3 ${it.promo ? 'bg-accent/60 -mx-3 px-3 rounded-lg' : ''}`}>
+                    <span className={`text-sm sm:text-base flex items-center gap-2 ${it.promo ? 'font-medium' : ''}`}>
+                      {it.name}
+                      {it.promo && <span className="inline-block text-[10px] font-semibold uppercase tracking-wider bg-primary text-primary-foreground px-2 py-0.5 rounded-full leading-none">Акция</span>}
+                    </span>
+                    <span className="flex-1 border-b border-dotted border-border/70 min-w-[16px] mx-1" />
+                    <span className={`font-semibold whitespace-nowrap text-sm sm:text-base ${it.promo ? 'text-primary' : ''}`}>{it.price}</span>
                   </li>
                 ))}
               </ul>
