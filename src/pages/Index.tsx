@@ -122,6 +122,9 @@ const Index = () => {
             ))}
           </nav>
           <div className="flex items-center gap-2">
+            <a href="tel:+79895958645" className="sm:hidden flex items-center justify-center min-h-[44px] min-w-[44px] text-primary" aria-label="Позвонить">
+              <Icon name="Phone" size={22} />
+            </a>
             <Button size="sm" className="hidden sm:inline-flex rounded-full px-5" asChild>
               <a href="https://n1300562.yclients.com/company/1185807/personal/select-services?o=" target="_blank" rel="noopener noreferrer">Записаться</a>
             </Button>
